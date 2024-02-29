@@ -23,6 +23,7 @@
 [![Motor](https://img.shields.io/badge/-Motor-464646?logo=Python)](https://motor.readthedocs.io/en/3.3.1/)
 [![docker_compose](https://img.shields.io/badge/-Docker%20Compose-464646?logo=docker)](https://docs.docker.com/compose/)
 [![Telegram](https://img.shields.io/badge/-Telegram-464646?logo=Telegram)](https://core.telegram.org/api)
+[![pre-commit](https://img.shields.io/badge/-pre--commit-464646?logo=pre-commit)](https://pre-commit.com/)
 
 [⬆️Оглавление](#оглавление)
 
