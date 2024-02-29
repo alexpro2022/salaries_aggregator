@@ -17,6 +17,7 @@ FORMATS = {
 async def calc(collection: AgnosticCollection, data: dict[str, str]) -> Response:
     dt_from = dt.fromisoformat(data['dt_from'])
     dt_upto = dt.fromisoformat(data['dt_upto'])
+    stage_match = {'$match': {'dt': {'$gte': dt_from, '$lte': dt_upto}}},
     stage_densify_dates = {'$densify': {
         'field': 'dt',
         'range': {
@@ -31,8 +32,9 @@ async def calc(collection: AgnosticCollection, data: dict[str, str]) -> Response
         'total': {'$sum': '$value'},
     }}
     pipeline = [
-        {'$match': {'dt': {'$gte': dt_from, '$lte': dt_upto}}},
+        stage_match,
         stage_densify_dates,
+        stage_match,
         stage_group_and_sum,
         {'$sort': {'date': 1}},
         {'$project': {'total': 1, 'date': {'$dateToString': {'date': '$date', 'format': FORMATS['full']}}}},
