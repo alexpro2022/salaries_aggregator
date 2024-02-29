@@ -17,7 +17,7 @@ FORMATS = {
 async def calc(collection: AgnosticCollection, data: dict[str, str]) -> Response:
     dt_from = dt.fromisoformat(data['dt_from'])
     dt_upto = dt.fromisoformat(data['dt_upto'])
-    stage_match = {'$match': {'dt': {'$gte': dt_from, '$lte': dt_upto}}},
+    stage_match = {'$match': {'dt': {'$gte': dt_from, '$lte': dt_upto}}}
     stage_densify_dates = {'$densify': {
         'field': 'dt',
         'range': {
