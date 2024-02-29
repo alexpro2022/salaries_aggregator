@@ -1,6 +1,6 @@
-# salaries_counter
+# salaries_aggregator
 
-[Тестовое задание](https://docs.google.com/document/d/1XRR5m0PMocZf-AwM1BFNYUJ2OdBEkm9YYH8uQjYlvQc/edit)
+[Тестовое задание] https://docs.google.com/document/d/14DcCb6Pj3PNsFqJzaS_hAhyePqRXF6uvmTzobp_G8PM/edit?usp=sharing)
 
 <br>
 
@@ -63,8 +63,8 @@
 1. Клонируйте репозиторий с GitHub и введите данные для переменных окружения (обязательное значение - `BOT_TOKEN`):
 
 ```bash
-git clone https://github.com/alexpro2022/salaries_counter.git
-cd salaries_counter
+git clone https://github.com/alexpro2022/salaries_aggregator.git
+cd salaries_aggregator
 cp env_example .env
 nano .env
 ```
@@ -95,7 +95,7 @@ docker compose -f docker/docker-compose.yml --env-file .env down -v
 ## Удаление:
 Из корневой директории проекта выполните команду:
 ```bash
-cd .. && rm -fr salaries_counter
+cd .. && rm -fr salaries_aggregator
 ```
 
 [⬆️Оглавление](#оглавление)
@@ -105,4 +105,4 @@ cd .. && rm -fr salaries_counter
 ## Автор:
 [Aleksei Proskuriakov](https://github.com/alexpro2022)
 
-[⬆️В начало](#salaries_counter)
+[⬆️В начало](#salaries_aggregator)

@@ -1,0 +1,59 @@
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: $DB_USER
+      MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
+    ports:
+      - $DB_PORT:$DB_PORT
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: echo 'db.runCommand({serverStatus:1}).ok' | mongosh admin -u $$MONGO_INITDB_ROOT_USERNAME -p $$MONGO_INITDB_ROOT_PASSWORD --quiet | grep 1
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  mongoimport:
+    image: mongo
+    volumes:
+      - ../data:/data/db/vol
+    command: mongorestore -u $DB_USER -p $DB_PASSWORD --authenticationDatabase admin -h mongo --port $DB_PORT -d $DB_NAME /data/db/vol/sample_collection.bson
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: $DB_USER
+      ME_CONFIG_MONGODB_ADMINPASSWORD: $DB_PASSWORD
+      ME_CONFIG_MONGODB_URL: mongodb://$DB_USER:$DB_PASSWORD@mongo:$DB_PORT
+    depends_on:
+      # - mongoimport
+      mongoimport:
+       condition: "service_completed_successfully"
+
+  myapp:
+    build: 
+      context: ..
+      dockerfile: ./docker/dev.Dockerfile
+    command: bash -c "python main.py"
+    depends_on:
+      # - mongoimport
+      mongoimport:
+       condition: "service_completed_successfully"
+    volumes:
+      - ../src:/app/src
+      # - ../test:/app/test      
+    env_file:
+      - ../.env
+
+volumes:
+  mongo_data:
