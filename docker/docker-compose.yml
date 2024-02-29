@@ -41,7 +41,7 @@ services:
        condition: "service_completed_successfully"
 
   myapp:
-    build: 
+    build:
       context: ..
       dockerfile: ./docker/dev.Dockerfile
     command: bash -c "python main.py"
@@ -51,7 +51,7 @@ services:
        condition: "service_completed_successfully"
     volumes:
       - ../src:/app/src
-      # - ../test:/app/test      
+      - ../test:/app/test
     env_file:
       - ../.env
 
