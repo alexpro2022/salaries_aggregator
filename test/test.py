@@ -1,6 +1,7 @@
 import logging
-from src.calculation import calc
 from test.test_data import test_data
+
+from src.calculation import calc
 
 logging.basicConfig(level=logging.INFO)
 
