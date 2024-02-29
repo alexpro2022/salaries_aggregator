@@ -1,0 +1,6 @@
+TELEGRAM_TOKEN=
+DB_USER=mongo
+DB_PASSWORD=mongopw
+DB_PORT=27017
+DB_NAME=salaries
+COLL_NAME=sample_collection
