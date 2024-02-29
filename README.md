@@ -17,7 +17,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/)
 [![asyncio](https://img.shields.io/badge/-asyncio-464646?logo=python)](https://docs.python.org/3/library/asyncio.html)
-[![aiogram](https://img.shields.io/badge/aiogram-v3.1-blue?logo=aiogram)](https://aiogram.dev/)
+[![aiogram](https://img.shields.io/badge/aiogram-3-blue?logo=aiogram)](https://aiogram.dev/)
 [![Pydantic](https://img.shields.io/badge/-Pydantic-464646?logo=Pydantic)](https://docs.pydantic.dev/)
 [![MongoDB](https://img.shields.io/badge/-MongoDB-464646?logo=MongoDB)](https://www.mongodb.com/)
 [![Motor](https://img.shields.io/badge/-Motor-464646?logo=Python)](https://motor.readthedocs.io/en/3.3.1/)
