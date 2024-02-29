@@ -25,16 +25,3 @@ class Config(BaseSettings):
 
 
 conf = Config()
-
-
-'''
-    @property
-    def bot_token(self):
-        return self.telegram_token.get_secret_value()
-
-
-
-    @property
-    def database_uri(self):
-        return f'{self.database_url}/{self.db_name.get_secret_value()}'
-'''

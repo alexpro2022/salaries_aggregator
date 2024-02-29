@@ -1,12 +1,13 @@
 import json
+
 from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
 from aiogram.methods.send_message import SendMessage
 from aiogram.types import Message
 from pymongo.collection import Collection
+
 from src.calculation import calc
 from src.config import conf
-
 
 dp = Dispatcher()
 

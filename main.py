@@ -1,9 +1,11 @@
 import asyncio
-from motor.motor_asyncio import AsyncIOMotorClient
-from motor.core import AgnosticClient
-from pymongo.database import Database
-from pymongo.collection import Collection
 from test.test import test
+
+from motor.core import AgnosticClient
+from motor.motor_asyncio import AsyncIOMotorClient
+from pymongo.collection import Collection
+from pymongo.database import Database
+
 from src.bot import start
 from src.config import conf
 
