@@ -1,6 +1,6 @@
 # salaries_aggregator
 
-[Тестовое задание] https://docs.google.com/document/d/14DcCb6Pj3PNsFqJzaS_hAhyePqRXF6uvmTzobp_G8PM/edit?usp=sharing)
+[Тестовое задание](https://docs.google.com/document/d/14DcCb6Pj3PNsFqJzaS_hAhyePqRXF6uvmTzobp_G8PM/edit?usp=sharing)
 
 <br>
 
@@ -15,7 +15,7 @@
 
 ## Технологии:
 
-[![Python](https://img.shields.io/badge/Python-v3.11-blue?logo=python)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/)
 [![asyncio](https://img.shields.io/badge/-asyncio-464646?logo=python)](https://docs.python.org/3/library/asyncio.html)
 [![aiogram](https://img.shields.io/badge/aiogram-v3.1-blue?logo=aiogram)](https://aiogram.dev/)
 [![Pydantic](https://img.shields.io/badge/-Pydantic-464646?logo=Pydantic)](https://docs.pydantic.dev/)
